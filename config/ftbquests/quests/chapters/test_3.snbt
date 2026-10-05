@@ -382,7 +382,7 @@
 			y: 2.0d
 		}
 		{
-			description: ["Use an &9Undead Battle Standard&r or defeat 125 undeads to invoke the Undead Army."]
+			description: ["Use an &9Undead Battle Standard&r or defeat 300 undead to invoke the Undead Army. Every army after your first needs 600 undead."]
 			id: "78DBF35A71CFAF36"
 			optional: true
 			rewards: [

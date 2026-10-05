@@ -75,7 +75,10 @@ config/voicechat/player-volumes.properties
 config/voicechat/category-volumes.properties
 config/voicechat/translations.properties
 .bobby/
-.bobby/91.197.6.216_25572/9125255282137232465/minecraft/overworld/last_access
+# Per-server world caches are ignored by .bobby/ above.
 .bobby
 config/paxi/datapacks/WDA-VanillaLoot-1.18.2-1.19.2-0.0.1/wda_logo.png
 config/paxi/datapacks/WDA-VanillaLoot-1.18.2-1.19.2-0.0.1/pack.mcmeta
+
+# Deployment download definitions and personal defaults belong in private source.
+/config/defaultoptions/servers.dat

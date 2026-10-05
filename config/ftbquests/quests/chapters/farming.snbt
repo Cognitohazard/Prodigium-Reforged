@@ -268,7 +268,8 @@
 					type: "random"
 				}
 				{
-					command: "/puffish_skills experience add @p general 125"
+					command: "/puffish_skills experience add @p simplyskills:tree 125"
+					elevate_perms: true
 					icon: "minecraft:experience_bottle"
 					id: "01329395B5FDE5E6"
 					title: "&9+General EXP&r"

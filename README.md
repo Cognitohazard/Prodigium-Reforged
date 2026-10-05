@@ -1,6 +1,10 @@
 Prodigium Reforged 
 ======
 
+This fork's `master` carries reusable bug and compatibility fixes. See
+[Public fixes](CUSTOMIZATIONS.md) for scope and the original upstream reference.
+Deployment preferences and packaging are maintained separately in private source.
+
 <a href="https://discord.gg/FDwY6GN4F5"><img src="https://raw.githubusercontent.com/intergrav/devins-badges/v3/assets/compact-minimal/social/discord-plural_46h.png" alt="Prodigium Reforged Discord"  width="40" height="40"></a>
 <img src="https://raw.githubusercontent.com/intergrav/devins-badges/v3/assets/compact-minimal/supported/forge_46h.png" alt="Forge modpack"  width="40" height="40">
 <a href="https://www.youtube.com/watch?v=34dUcLdFRd0"><img src="https://raw.githubusercontent.com/intergrav/devins-badges/v3/assets/compact-minimal/social/youtube-singular_46h.png" alt="Prodigium Reforged Youtube"  width="40" height="40"></a>

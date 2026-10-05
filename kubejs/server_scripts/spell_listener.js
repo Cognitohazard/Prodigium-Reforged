@@ -66,9 +66,9 @@ PlayerEvents.changeMana((event) => {
           false,
           true,
         );
-        Client.player.playSound("minecraft:block.enchantment_table.use");
-        Client.player.playSound("minecraft:block.enchantment_table.use");
-        Client.player.playSound("minecraft:block.enchantment_table.use");
+        player.playSound("minecraft:block.enchantment_table.use");
+        player.playSound("minecraft:block.enchantment_table.use");
+        player.playSound("minecraft:block.enchantment_table.use");
 
         manaTracker[player.uuid] = 0;
       }
@@ -88,9 +88,9 @@ PlayerEvents.changeMana((event) => {
             false,
             true,
           );
-          Client.player.playSound("minecraft:block.enchantment_table.use");
-          Client.player.playSound("minecraft:block.enchantment_table.use");
-          Client.player.playSound("minecraft:block.enchantment_table.use");
+          player.playSound("minecraft:block.enchantment_table.use");
+          player.playSound("minecraft:block.enchantment_table.use");
+          player.playSound("minecraft:block.enchantment_table.use");
 
           manaTracker[player.uuid] = 0;
         }
@@ -101,9 +101,9 @@ PlayerEvents.changeMana((event) => {
         player.removeEffect("kubejs:ignitium_protection");
         player.removeEffect("kubejs:ignitium_charge");
         player.potionEffects.add("kubejs:overcharged", 180, 0, false, true);
-        Client.player.playSound("wizards:fire_wall_ignite");
-        Client.player.playSound("cataclysm:ignis_death");
-        Client.player.playSound("wizards:fire_wall_ignite");
+        player.playSound("wizards:fire_wall_ignite");
+        player.playSound("cataclysm:ignis_death");
+        player.playSound("wizards:fire_wall_ignite");
         manaTracker[player.uuid] = 0;
       }
     }

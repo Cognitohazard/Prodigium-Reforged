@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "runes:arcane_stone",
+      "required": false
+    }
+  ]
+}

@@ -12,7 +12,7 @@ PlayerEvents.spellOnCast((event) => {
   // Eldritch Enfeeblement \\
   if (player.tags.contains("eldritch_enfeeblement") && Math.random() < 0.08) {
     player.playSound("spell_engine:generic_healing_release", 0.6, 1.4);
-    if (player.tags.contains("stage_expert")) {
+    if (player.stages.has("stage_expert")) {
       player.heal(8);
     } else player.heal(5);
   }

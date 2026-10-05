@@ -527,6 +527,17 @@
 				}
 				{
 					auto: "invisible"
+					command: "/puffish_skills points add @p simplyskills:gunner 2"
+					elevate_perms: true
+					icon: "minecraft:experience_bottle"
+					id: "21D716BF8ACB2CA6"
+					silent: true
+					team_reward: false
+					title: "&6+2 Skill Points&r"
+					type: "command"
+				}
+				{
+					auto: "invisible"
 					command: "/puffish_skills points add @p simplyskills:wizard 2"
 					elevate_perms: true
 					icon: "minecraft:experience_bottle"
@@ -641,6 +652,17 @@
 					elevate_perms: true
 					icon: "minecraft:experience_bottle"
 					id: "2008CD9DB00EB6F4"
+					silent: true
+					team_reward: false
+					title: "&6+2 Skill Points&r"
+					type: "command"
+				}
+				{
+					auto: "invisible"
+					command: "/puffish_skills points add @p simplyskills:gunner 2"
+					elevate_perms: true
+					icon: "minecraft:experience_bottle"
+					id: "36A054895CF4D8FA"
 					silent: true
 					team_reward: false
 					title: "&6+2 Skill Points&r"
@@ -787,6 +809,17 @@
 				}
 				{
 					auto: "invisible"
+					command: "/puffish_skills points add @p simplyskills:gunner 2"
+					elevate_perms: true
+					icon: "minecraft:experience_bottle"
+					id: "44A4E5301B8E39C8"
+					silent: true
+					team_reward: false
+					title: "&6+2 Skill Points&r"
+					type: "command"
+				}
+				{
+					auto: "invisible"
 					command: "/puffish_skills points add @p simplyskills:wizard 2"
 					elevate_perms: true
 					icon: "minecraft:experience_bottle"
@@ -919,6 +952,7 @@
 				{
 					auto: "enabled"
 					command: "/puffish_skills points add @p simplyskills:berserker 2"
+					elevate_perms: true
 					icon: "minecraft:experience_bottle"
 					id: "4DA27660174E44DD"
 					silent: true
@@ -929,6 +963,7 @@
 				{
 					auto: "invisible"
 					command: "/puffish_skills points add @p simplyskills:crusader 2"
+					elevate_perms: true
 					icon: "minecraft:experience_bottle"
 					id: "6057A1F638DBCCD1"
 					silent: true
@@ -939,6 +974,7 @@
 				{
 					auto: "invisible"
 					command: "/puffish_skills points add @p simplyskills:ranger 2"
+					elevate_perms: true
 					icon: "minecraft:experience_bottle"
 					id: "1E231A6D24C91038"
 					silent: true
@@ -948,7 +984,19 @@
 				}
 				{
 					auto: "invisible"
+					command: "/puffish_skills points add @p simplyskills:gunner 2"
+					elevate_perms: true
+					icon: "minecraft:experience_bottle"
+					id: "279B0F6601B1454A"
+					silent: true
+					team_reward: false
+					title: "&6+2 Skill Points&r"
+					type: "command"
+				}
+				{
+					auto: "invisible"
 					command: "/puffish_skills points add @p simplyskills:wizard 2"
+					elevate_perms: true
 					icon: "minecraft:experience_bottle"
 					id: "2B7FDC7D0A178A72"
 					silent: true
@@ -959,6 +1007,7 @@
 				{
 					auto: "invisible"
 					command: "/puffish_skills points add @p simplyskills:cleric 2"
+					elevate_perms: true
 					icon: "minecraft:experience_bottle"
 					id: "4A9E008F17B99F7E"
 					silent: true
@@ -1108,6 +1157,17 @@
 				}
 				{
 					auto: "invisible"
+					command: "/puffish_skills points add @p simplyskills:gunner 2"
+					elevate_perms: true
+					icon: "minecraft:experience_bottle"
+					id: "7E8B4A9C0106BED6"
+					silent: true
+					team_reward: false
+					title: "&6+2 Skill Points&r"
+					type: "command"
+				}
+				{
+					auto: "invisible"
 					command: "/puffish_skills points add @p simplyskills:wizard 2"
 					elevate_perms: true
 					icon: "minecraft:experience_bottle"
@@ -1225,6 +1285,17 @@
 					elevate_perms: true
 					icon: "minecraft:experience_bottle"
 					id: "4F9ED9A5152A3DF0"
+					silent: true
+					team_reward: false
+					title: "&6+2 Skill Points&r"
+					type: "command"
+				}
+				{
+					auto: "invisible"
+					command: "/puffish_skills points add @p simplyskills:gunner 2"
+					elevate_perms: true
+					icon: "minecraft:experience_bottle"
+					id: "6127AD16A5B26461"
 					silent: true
 					team_reward: false
 					title: "&6+2 Skill Points&r"
@@ -1366,6 +1437,17 @@
 				}
 				{
 					auto: "invisible"
+					command: "/puffish_skills points add @p simplyskills:gunner 2"
+					elevate_perms: true
+					icon: "minecraft:experience_bottle"
+					id: "7771B632D3B77D8E"
+					silent: true
+					team_reward: false
+					title: "&6+2 Skill Points&r"
+					type: "command"
+				}
+				{
+					auto: "invisible"
 					command: "/puffish_skills points add @p simplyskills:wizard 2"
 					elevate_perms: true
 					icon: "minecraft:experience_bottle"
@@ -1494,6 +1576,17 @@
 				}
 				{
 					auto: "invisible"
+					command: "/puffish_skills points add @p simplyskills:gunner 1"
+					elevate_perms: true
+					icon: "minecraft:experience_bottle"
+					id: "3E5DEFDDB9FC4056"
+					silent: true
+					team_reward: false
+					title: "&6+1 Skill Points&r"
+					type: "command"
+				}
+				{
+					auto: "invisible"
 					command: "/puffish_skills points add @p simplyskills:wizard 1"
 					elevate_perms: true
 					icon: "minecraft:experience_bottle"
@@ -1610,6 +1703,17 @@
 					elevate_perms: true
 					icon: "minecraft:experience_bottle"
 					id: "12AB2C1B5366600B"
+					silent: true
+					team_reward: false
+					title: "&6+2 Skill Points&r"
+					type: "command"
+				}
+				{
+					auto: "invisible"
+					command: "/puffish_skills points add @p simplyskills:gunner 2"
+					elevate_perms: true
+					icon: "minecraft:experience_bottle"
+					id: "0107B8D9A8A9F3A4"
 					silent: true
 					team_reward: false
 					title: "&6+2 Skill Points&r"
@@ -1757,6 +1861,17 @@
 				}
 				{
 					auto: "invisible"
+					command: "/puffish_skills points add @p simplyskills:gunner 2"
+					elevate_perms: true
+					icon: "minecraft:experience_bottle"
+					id: "4C76BE66F4D45B50"
+					silent: true
+					team_reward: false
+					title: "&6+2 Skill Points&r"
+					type: "command"
+				}
+				{
+					auto: "invisible"
 					command: "/puffish_skills points add @p simplyskills:wizard 2"
 					elevate_perms: true
 					icon: "minecraft:experience_bottle"
@@ -1883,6 +1998,17 @@
 				}
 				{
 					auto: "invisible"
+					command: "/puffish_skills points add @p simplyskills:gunner 2"
+					elevate_perms: true
+					icon: "minecraft:experience_bottle"
+					id: "52C498A9361DD3DC"
+					silent: true
+					team_reward: false
+					title: "&6+2 Skill Points&r"
+					type: "command"
+				}
+				{
+					auto: "invisible"
 					command: "/puffish_skills points add @p simplyskills:wizard 2"
 					elevate_perms: true
 					icon: "minecraft:experience_bottle"
@@ -1992,6 +2118,17 @@
 					elevate_perms: true
 					icon: "minecraft:experience_bottle"
 					id: "0B9C60D4D2819B7B"
+					silent: true
+					team_reward: false
+					title: "&6+2 Skill Points&r"
+					type: "command"
+				}
+				{
+					auto: "invisible"
+					command: "/puffish_skills points add @p simplyskills:gunner 2"
+					elevate_perms: true
+					icon: "minecraft:experience_bottle"
+					id: "5839B41127798C40"
 					silent: true
 					team_reward: false
 					title: "&6+2 Skill Points&r"
@@ -2142,6 +2279,17 @@
 				}
 				{
 					auto: "invisible"
+					command: "/puffish_skills points add @p simplyskills:gunner 2"
+					elevate_perms: true
+					icon: "minecraft:experience_bottle"
+					id: "4049E4CBD47A89B7"
+					silent: true
+					team_reward: false
+					title: "&6+2 Skill Points&r"
+					type: "command"
+				}
+				{
+					auto: "invisible"
 					command: "/puffish_skills points add @p simplyskills:wizard 2"
 					elevate_perms: true
 					icon: "minecraft:experience_bottle"
@@ -2259,6 +2407,17 @@
 					elevate_perms: true
 					icon: "minecraft:experience_bottle"
 					id: "05DD50B4D2DF5E65"
+					silent: true
+					team_reward: false
+					title: "&6+2 Skill Points&r"
+					type: "command"
+				}
+				{
+					auto: "invisible"
+					command: "/puffish_skills points add @p simplyskills:gunner 2"
+					elevate_perms: true
+					icon: "minecraft:experience_bottle"
+					id: "5DE8E0E7F717CB13"
 					silent: true
 					team_reward: false
 					title: "&6+2 Skill Points&r"
@@ -2585,6 +2744,17 @@
 				}
 				{
 					auto: "invisible"
+					command: "/puffish_skills points add @p simplyskills:gunner 2"
+					elevate_perms: true
+					icon: "minecraft:experience_bottle"
+					id: "20522D762219A090"
+					silent: true
+					team_reward: false
+					title: "&6+2 Skill Points&r"
+					type: "command"
+				}
+				{
+					auto: "invisible"
 					command: "/puffish_skills points add @p simplyskills:wizard 2"
 					elevate_perms: true
 					icon: "minecraft:experience_bottle"
@@ -2695,6 +2865,17 @@
 				}
 				{
 					auto: "invisible"
+					command: "/puffish_skills points add @p simplyskills:gunner 2"
+					elevate_perms: true
+					icon: "minecraft:experience_bottle"
+					id: "1C9C3F51AC325C4B"
+					silent: true
+					team_reward: false
+					title: "&6+2 Skill Points&r"
+					type: "command"
+				}
+				{
+					auto: "invisible"
 					command: "/puffish_skills points add @p simplyskills:wizard 2"
 					elevate_perms: true
 					icon: "minecraft:experience_bottle"
@@ -2791,6 +2972,17 @@
 					elevate_perms: true
 					icon: "minecraft:experience_bottle"
 					id: "486B7FF52B266A89"
+					silent: true
+					team_reward: false
+					title: "&6+2 Skill Points&r"
+					type: "command"
+				}
+				{
+					auto: "invisible"
+					command: "/puffish_skills points add @p simplyskills:gunner 2"
+					elevate_perms: true
+					icon: "minecraft:experience_bottle"
+					id: "16CF9BE676C65C25"
 					silent: true
 					team_reward: false
 					title: "&6+2 Skill Points&r"
@@ -2921,6 +3113,17 @@
 					elevate_perms: true
 					icon: "minecraft:experience_bottle"
 					id: "3FF589D046FB7A76"
+					silent: true
+					team_reward: false
+					title: "&6+2 Skill Points&r"
+					type: "command"
+				}
+				{
+					auto: "invisible"
+					command: "/puffish_skills points add @p simplyskills:gunner 2"
+					elevate_perms: true
+					icon: "minecraft:experience_bottle"
+					id: "01D42EBA44A609EE"
 					silent: true
 					team_reward: false
 					title: "&6+2 Skill Points&r"
