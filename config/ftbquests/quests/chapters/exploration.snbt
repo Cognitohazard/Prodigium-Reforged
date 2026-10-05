@@ -524,11 +524,11 @@
 				xp_levels: 2
 			}]
 			tasks: [{
-				advancement: "majruszs_difficulty:progressive_difficulty/find_flying_phantom"
-				criterion: ""
+				entity: "minecraft:phantom"
 				icon: "minecraft:phantom_membrane"
 				id: "47356BE14BF89354"
-				type: "advancement"
+				type: "kill"
+				value: 1L
 			}]
 			title: "Find a flying phantom"
 			x: 9.0d

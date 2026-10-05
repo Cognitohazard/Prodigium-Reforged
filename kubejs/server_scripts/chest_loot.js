@@ -1,4 +1,6 @@
 LootJS.modifiers((event) => {
+  // The permanent onyx gem removals are replaced by stage_loot.js, which removes
+  // every stage-locked item, onyx included, from chest loot until the player opening the chest has the stage.
   // //// Dungeon's Arise structures \\\\
 
   // event.addLootTableModifier(
@@ -9,8 +11,6 @@ LootJS.modifiers((event) => {
     .addLootTableModifier(
       "dungeons_arise:chests/shiraz_palace/shiraz_palace_elite",
     )
-    //Onyx
-    .removeLoot("simpleores:onyx_gem")
     .randomChance(0.15)
     .addLoot("confluence:lucky_horseshoe");
   // event
@@ -85,110 +85,37 @@ LootJS.modifiers((event) => {
   // );
 
   event
-    .addLootTableModifier("dungeons_arise:chests/foundry/foundry_lava_pit")
-    //Onyx
-    .removeLoot("simpleores:onyx_gem");
-  event
     .addLootTableModifier("dungeons_arise:chests/foundry/foundry_treasure")
-    //Onyx
-    .removeLoot("simpleores:onyx_gem")
     .randomChance(0.15)
     .addLoot("confluence:lucky_horseshoe");
-  event
-    .addLootTableModifier("dungeons_arise:chests/foundry/foundry_normal")
-    //Onyx
-    .removeLoot("simpleores:onyx_gem");
 
-  event
-    .addLootTableModifier(
-      "dungeons_arise:chests/heavenly_challenger/heavenly_challenger",
-    )
-    //Onyx
-    .removeLoot("simpleores:onyx_gem");
-  event
-    .addLootTableModifier(
-      "dungeons_arise:chests/heavenly_challenger/heavenly_challenger_supply",
-    )
-    //Onyx
-    .removeLoot("simpleores:onyx_gem");
   event
     .addLootTableModifier(
       "dungeons_arise:chests/heavenly_challenger/heavenly_challenger_treasure",
     )
-    //Onyx
-    .removeLoot("simpleores:onyx_gem")
     .randomChance(0.15)
     .addLoot("confluence:lucky_horseshoe");
-  event
-    .addLootTableModifier(
-      "dungeons_arise:chests/heavenly_challenger/heavenly_challenger_normal",
-    )
-    //Onyx
-    .removeLoot("simpleores:onyx_gem");
-  event
-    .addLootTableModifier(
-      "dungeons_arise:chests/heavenly_challenger/heavenly_challenger_theater",
-    )
-    //Onyx
-    .removeLoot("simpleores:onyx_gem");
 
-  event
-    .addLootTableModifier(
-      "dungeons_arise:chests/heavenly_rider/heavenly_rider_barrels",
-    )
-    //Onyx
-    .removeLoot("simpleores:onyx_gem");
-  event
-    .addLootTableModifier(
-      "dungeons_arise:chests/heavenly_rider/heavenly_rider_normal",
-    )
-    //Onyx
-    .removeLoot("simpleores:onyx_gem");
   event
     .addLootTableModifier(
       "dungeons_arise:chests/heavenly_rider/heavenly_rider_treasure",
     )
-    //Onyx
-    .removeLoot("simpleores:onyx_gem")
     .randomChance(0.15)
     .addLoot("confluence:lucky_horseshoe");
 
   event
     .addLootTableModifier(
-      "dungeons_arise:chests/heavenly_conqueror/heavenly_conqueror_barrels",
-    )
-    //Onyx
-    .removeLoot("simpleores:onyx_gem");
-  event
-    .addLootTableModifier(
       "dungeons_arise:chests/heavenly_conqueror/heavenly_conqueror_treasure",
     )
-    //Onyx
-    .removeLoot("simpleores:onyx_gem")
     .randomChance(0.15)
     .addLoot("confluence:lucky_horseshoe");
-  event
-    .addLootTableModifier(
-      "dungeons_arise:chests/heavenly_conqueror/heavenly_conqueror_normal",
-    )
-    //Onyx
-    .removeLoot("simpleores:onyx_gem");
 
   event
     .addLootTableModifier(
       "dungeons_arise:chests/ceryneian_hind/ceryneian_hind_treasure",
     )
-    //Onyx
-    .removeLoot("simpleores:onyx_gem")
     .randomChance(0.15)
     .addLoot("confluence:lucky_horseshoe");
-
-  event
-    .addLootTableModifier(
-      "dungeons_arise:chests/foundry/foundry_passage_normal",
-    )
-    //Onyx
-    .removeLoot("simpleores:onyx_gem");
 
   // event.addLootTableModifier(
   //   "dungeons_arise:chests/small_blimp/small_blimp_treasure",
@@ -206,8 +133,6 @@ LootJS.modifiers((event) => {
     .addLootTableModifier(
       "dungeons_arise:chests/jungle_tree_house/jungle_tree_house_treasure",
     )
-    //Onyx
-    .removeLoot("simpleores:onyx_gem")
     .randomChance(0.15)
     .addLoot("confluence:lucky_horseshoe");
 
@@ -224,70 +149,9 @@ LootJS.modifiers((event) => {
   // );
 
   event
-    .addLootTableModifier(
-      "dungeons_arise:chests/plague_asylum/plague_asylum_potions",
-    )
-    //Onyx
-    .removeLoot("simpleores:onyx_gem");
-
-  event
-    .addLootTableModifier(
-      "dungeons_arise:chests/bandit_village/bandit_village_tents",
-    )
-    //Onyx
-    .removeLoot("simpleores:onyx_gem");
-  event
-    .addLootTableModifier(
-      "dungeons_arise:chests/bandit_village/bandit_village_normal",
-    )
-    //Onyx
-    .removeLoot("simpleores:onyx_gem");
-  event
-    .addLootTableModifier(
-      "dungeons_arise:chests/bandit_village/bandit_village_barrels",
-    )
-    //Onyx
-    .removeLoot("simpleores:onyx_gem");
-
-  event
-    .addLootTableModifier(
-      "dungeons_arise:chests/bandit_towers/bandit_towers_rooms",
-    )
-    //Onyx
-    .removeLoot("simpleores:onyx_gem");
-  event
-    .addLootTableModifier(
-      "dungeons_arise:chests/bandit_towers/bandit_towers_treasure",
-    )
-    //Onyx
-    .removeLoot("simpleores:onyx_gem");
-  event
-    .addLootTableModifier(
-      "dungeons_arise:chests/bandit_towers/bandit_towers_normal",
-    )
-    //Onyx
-    .removeLoot("simpleores:onyx_gem");
-  event
-    .addLootTableModifier(
-      "dungeons_arise:chests/bandit_towers/bandit_towers_barrels",
-    )
-    //Onyx
-    .removeLoot("simpleores:onyx_gem");
-
-  event
     .addLootTableModifier("dungeons_arise:chests/aviary/aviary_treasure")
-    //Onyx
-    .removeLoot("simpleores:onyx_gem")
     .randomChance(0.15)
     .addLoot("confluence:lucky_horseshoe");
-  event
-    .addLootTableModifier("dungeons_arise:chests/aviary/aviary_normal")
-    //Onyx
-    .removeLoot("simpleores:onyx_gem");
-  event
-    .addLootTableModifier("dungeons_arise:chests/aviary/aviary_barrels")
-    //Onyx
-    .removeLoot("simpleores:onyx_gem");
 
   //// Minecraft \\\\
   event
@@ -300,20 +164,8 @@ LootJS.modifiers((event) => {
 
   event
     .addLootTableModifier("minecraft:chests/jungle_temple")
-    //Onyx
-    .removeLoot("simpleores:onyx_gem")
     .randomChance(0.15)
     .addLoot("confluence:lucky_horseshoe");
-
-  event
-    .addLootTableModifier("minecraft:chests/ruined_portal")
-    //Onyx
-    .removeLoot("simpleores:onyx_gem");
-
-  event
-    .addLootTableModifier("minecraft:chests/desert_pyramid")
-    //Onyx
-    .removeLoot("simpleores:onyx_gem");
 
   event
     .addLootTableModifier("minecraft:chests/bastion_other")
@@ -328,8 +180,6 @@ LootJS.modifiers((event) => {
   //// Loot Integrations \\\\
   event
     .addLootTableModifier("lootintegrations:chests/easy")
-    //Onyx
-    .removeLoot("simpleores:onyx_gem")
     .randomChance(0.1)
     .addLoot("confluence:hermes_boots")
     .randomChance(0.12)
@@ -339,8 +189,6 @@ LootJS.modifiers((event) => {
 
   event
     .addLootTableModifier("lootintegrations:chests/medium")
-    //Onyx
-    .removeLoot("simpleores:onyx_gem")
     .randomChance(0.15)
     .addLoot("confluence:hermes_boots")
     .randomChance(0.05)
