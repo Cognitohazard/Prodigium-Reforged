@@ -8,10 +8,8 @@ KeyBindEvents.register((event) => {
 });
 
 KeyBindEvents.modify((event) => {
-  event.modifyKey("key.simplyskills.ability1", GLFW.GLFW_KEY_F);
-  event.modifyKey("key.bestiary.open", GLFW.GLFW_KEY_H);
-  event.modifyKey("key.puffish_skills.open", GLFW.GLFW_KEY_I);
-  event.modifyKey("key.swapOffhand", GLFW.GLFW_KEY_L);
+  // Defaults belong in config/defaultoptions/keybindings.txt. Changing only a
+  // KeyMapping's default here makes Default Options preserve its old active key.
 
   event.remove("desc.seasonhud.keybind.options");
   event.remove("key.simplyskills.ability2");

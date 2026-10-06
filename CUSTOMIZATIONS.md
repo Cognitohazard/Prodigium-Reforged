@@ -35,6 +35,16 @@ explain the existing Frostmaw treasure-bag source: one equal-weight roll
 among Icepop, Ice Helmet and Ice Chestplate. Quest IDs, objectives, rewards,
 recipes and loot tables are unchanged.
 
+Keybinding defaults use Default Options as their single authority. The four
+upstream scripted choices (Signature Ability F, Bestiary H, Skill Tree I and
+Swap Offhand L) are consolidated into `config/defaultoptions/keybindings.txt`.
+KeyBindJS 2001-2.3.0 changes only the default key, leaving the active key behind;
+Default Options 18.0.4 then interprets the mismatch as a personal binding and
+skips it on first launch. Key registration and removal remain unchanged.
+Existing saved bindings are preserved; use individual reset buttons or Reset
+Keys to adopt defaults deliberately. This is a startup compatibility fix, not
+a forced migration of player preferences.
+
 Spawn repairs cover both the biome modifiers and Spawn Balance Utility's CSV,
 which replaces biome spawn lists when `balanceBiomeSpawnValues` is enabled.
 The CSV removes 763 erroneous pig rows and 44 unregistered-entity rows, corrects

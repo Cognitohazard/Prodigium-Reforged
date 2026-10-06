@@ -19,7 +19,7 @@ key_key.togglePerspective:key.keyboard.f5:NONE
 key_key.smoothCamera:key.keyboard.unknown:NONE
 key_key.fullscreen:key.keyboard.f11:NONE
 key_key.spectatorOutlines:key.keyboard.unknown:NONE
-key_key.swapOffhand:key.keyboard.f:NONE
+key_key.swapOffhand:key.keyboard.l:NONE
 key_key.saveToolbarActivator:key.keyboard.c:NONE
 key_key.loadToolbarActivator:key.keyboard.x:NONE
 key_key.advancements:key.keyboard.l:NONE
@@ -75,7 +75,7 @@ key_key.cataclysm.boots_ability:key.keyboard.v:NONE
 key_key.spyglass-improvements.use:key.keyboard.z:NONE
 key_key.bossdpstracker.display:key.keyboard.period:NONE
 key_key.bossdpstracker.change_data_type:key.keyboard.comma:NONE
-key_key.simplyskills.ability1:key.keyboard.v:NONE
+key_key.simplyskills.ability1:key.keyboard.f:NONE
 key_key.simplyskills.ability2:key.keyboard.r:NONE
 key_keybindings.spell_engine.bypass_spell_hotbar:key.keyboard.left.alt:NONE
 key_keybindings.spell_engine.spell_hotbar_1:key.keyboard.unknown:NONE
@@ -95,7 +95,7 @@ key_dropoff.key.dump:key.keyboard.unknown:NONE
 key_dropoff.key.deposit:key.keyboard.unknown:NONE
 key_chloride.zoom:key.keyboard.c:NONE
 key_key.sweet_charm_o_mine.toggle_sniper_zoom:key.keyboard.z:NONE
-key_key.bestiary.open:key.keyboard.slash:NONE
+key_key.bestiary.open:key.keyboard.h:NONE
 key_key.sedparties.hover:key.keyboard.left.alt:NONE
 key_key.sedparties.partyglow:key.keyboard.f8:NONE
 key_key.alshanex_familiars.trinket_key:key.keyboard.v:NONE
