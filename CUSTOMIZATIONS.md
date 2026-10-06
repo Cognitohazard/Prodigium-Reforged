@@ -21,6 +21,20 @@ update. The other optimizer behavior is retained; this does not change the
 separate FTB Quests detection settings. An affected-player comparison remains
 the gameplay verification step.
 
+The armor formula is capped at the incoming damage:
+`damage * MIN(1, 20 / (armor + 10))`. Positive armor below 10 no longer makes
+an entity take more damage than having no armor. The curve at 10 armor and
+above is unchanged, as are toughness and player damage normalization. This
+applies to living entities, including mobs, not just players. It does not
+give low armor a damage reduction of its own.
+
+Pet quest descriptions match Tameable Beasts 7.1.3: penguins use Frozen Fish
+for taming; Argentavis spawns from Y 100 and supports hand-fed bait below
+10 health or bait arrows at any health. The penguin equipment quests now
+explain the existing Frostmaw treasure-bag source: one equal-weight roll
+among Icepop, Ice Helmet and Ice Chestplate. Quest IDs, objectives, rewards,
+recipes and loot tables are unchanged.
+
 Spawn repairs cover both the biome modifiers and Spawn Balance Utility's CSV,
 which replaces biome spawn lists when `balanceBiomeSpawnValues` is enabled.
 The CSV removes 763 erroneous pig rows and 44 unregistered-entity rows, corrects

@@ -720,9 +720,9 @@
 			description: [
 				"Spawns on Stony Shores, Frozen Oceans, Snowy Beaches, frozen peaks and beaches."
 				""
-				"Can be tamed with &6Raw Fish&r."
+				"Can be tamed with &6Frozen Fish&r (fish plus an ice ingredient; see JEI)."
 				""
-				"Bred with Raw Fish."
+				"Bred with raw Cod, Salmon or Tropical Fish."
 			]
 			id: "6C1573E379555B58"
 			rewards: [{
@@ -745,7 +745,11 @@
 		}
 		{
 			dependencies: ["6C1573E379555B58"]
-			description: ["Give it to your Penguin!"]
+			description: [
+				"Obtained from &6Frostmaw's Treasure Bag&r."
+				"Each bag gives one random penguin equipment item: Icepop, Ice Helmet or Ice Chestplate (equal chances)."
+				"Give it to your Penguin!"
+			]
 			hide_until_deps_complete: true
 			id: "7641EF002CAF57C9"
 			rewards: [{
@@ -764,7 +768,11 @@
 		}
 		{
 			dependencies: ["6C1573E379555B58"]
-			description: ["Give it to your Penguin!"]
+			description: [
+				"Obtained from &6Frostmaw's Treasure Bag&r."
+				"Each bag gives one random penguin equipment item: Icepop, Ice Helmet or Ice Chestplate (equal chances)."
+				"Give it to your Penguin!"
+			]
 			hide_until_deps_complete: true
 			id: "696C5F90C37AB30C"
 			rewards: [{
@@ -783,7 +791,11 @@
 		}
 		{
 			dependencies: ["6C1573E379555B58"]
-			description: ["Give it to your Penguin!"]
+			description: [
+				"Obtained from &6Frostmaw's Treasure Bag&r."
+				"Each bag gives one random penguin equipment item: Icepop, Ice Helmet or Ice Chestplate (equal chances)."
+				"Give it to your Penguin!"
+			]
 			hide_until_deps_complete: true
 			id: "549F31AD1F60E596"
 			rewards: [{
@@ -850,10 +862,10 @@
 		{
 			dependencies: ["686B5BA848725480"]
 			description: [
-				"Spawns in Mountainous biomes with heights of &6over 120 blocks&r."
+				"Spawns in Mountainous biomes at &6Y 100 or higher&r."
 				""
-				"Can be tamed by shooting &6Bird Bait Arrow&r at it."
-				"Be careful to not kill it, one of the strongest mount in Prodigium."
+				"Can be tamed with &6Big Bird Bait&r when below 10 health (5 hearts), or with a &6Bird Bait Arrow&r at any health."
+				"The arrow still deals damage, so be careful not to kill it."
 				""
 				"Bred with &6Quetzal Meat&r."
 			]
