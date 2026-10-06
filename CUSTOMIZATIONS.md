@@ -13,6 +13,14 @@ server-side sound calls and the Canary/Ore Stages palette incompatibility.
 The party boss-scaling fix prevents permanent negative scaling for bosses
 generated in an empty dimension. Personal caches are excluded.
 
+Achievements Optimizer 1.0.5 inventory-event skipping is disabled
+(`skipTicksAdvancements=0`). Its nominal tick counter actually discards five
+inventory-change calls before processing the sixth, without a queued retry.
+This can leave item advancements pending until another relevant inventory
+update. The other optimizer behavior is retained; this does not change the
+separate FTB Quests detection settings. An affected-player comparison remains
+the gameplay verification step.
+
 Spawn repairs cover both the biome modifiers and Spawn Balance Utility's CSV,
 which replaces biome spawn lists when `balanceBiomeSpawnValues` is enabled.
 The CSV removes 763 erroneous pig rows and 44 unregistered-entity rows, corrects
