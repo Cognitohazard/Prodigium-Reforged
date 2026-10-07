@@ -45,6 +45,15 @@ Existing saved bindings are preserved; use individual reset buttons or Reset
 Keys to adopt defaults deliberately. This is a startup compatibility fix, not
 a forced migration of player preferences.
 
+The Brain of Cthulhu's client phase is derived from Terra Entity's synchronized
+skill index. In 1.1.16-hotfix2 the phase field changes only on the server, while
+client target selection still checks that field, preventing phase-two melee
+hits in vanilla and Better Combat. The client script preserves phase-one
+immunity, excludes the three decoys and leaves server damage rules unchanged.
+The quest explains the minion phase, real boss and decoys. The script passed
+48 checks with the pack's Rhino interpreter and Java-object fixtures; this
+does not substitute for a graphical multiplayer combat test.
+
 Spawn repairs cover both the biome modifiers and Spawn Balance Utility's CSV,
 which replaces biome spawn lists when `balanceBiomeSpawnValues` is enabled.
 The CSV removes 763 erroneous pig rows and 44 unregistered-entity rows, corrects

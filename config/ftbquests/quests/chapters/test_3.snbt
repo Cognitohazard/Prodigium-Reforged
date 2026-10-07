@@ -1801,7 +1801,12 @@
 		}
 		{
 			dependencies: ["53EAB8D1FE264583"]
-			description: ["Summon it using the &9Bloody Spine&r."]
+			description: [
+				"Summon it using the &9Bloody Spine&r."
+				"&6Phase one:&r defeat all 20 flying minions. The Brain itself cannot be damaged until they are gone."
+				"&6Phase two:&r attack the real, exposed Brain. Its three copies are invulnerable decoys; hitting them does not damage the boss."
+				"The real Brain can be hit with melee weapons in phase two. Leave room to dodge its dashes, and use ranged attacks while it is out of reach."
+			]
 			id: "076CA10541A9CDF3"
 			rewards: [
 				{
