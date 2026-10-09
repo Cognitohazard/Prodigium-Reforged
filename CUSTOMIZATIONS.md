@@ -80,6 +80,20 @@ later visitor does not restore filtered loot. It does not change entity drops
 or treasure-bag tables. The stage-present branch still needs an in-game check;
 source and syntax checks alone do not establish multiplayer behavior.
 
+A player's item use ends at death (`kubejs/server_scripts/death_item_use.js`).
+Vanilla removes a dead player after 20 ticks, which drops the player's Forge
+capabilities, while an item use started before death keeps counting down. When
+a bite completes after that, Spice of Life: Carrot Edition 1.15.1 looks up the
+player's food list in `FoodTracker.onFoodEaten` and throws
+`FoodListNotFoundException` inside the player's tick. With Neruina the player
+is kicked about a second after dying; without it the server would crash. The
+script calls `stopUsingItem()` on a player in the death event and leaves the
+death itself untouched. Operator-only `/deathuse` checks that the two calls it
+relies on resolve on a living entity in the installed KubeJS build, without
+adding an entity to the world. The script passed its checks with the pack's
+Rhino interpreter and fake entities; confirming it in play needs a death in
+the middle of a bite.
+
 Branding, server addresses, starter gifts, added mods and version selections,
 launcher packaging, keybindings, graphics settings, other balance/progression
 preferences, selected skill backports and host tuning belong in a separate
