@@ -524,7 +524,8 @@
   },
   {
     "mob": ["undead_revamp2:invisiblebidy"],
-    "result": "stage_expert"
+    "gamestage": "stage_expert",
+    "result": "default"
   },
   {
     "mob": ["undead_revamp2:invisiblebidy"],
