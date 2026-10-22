@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:copy_nbt",
+              "ops": [
+                {
+                  "op": "replace",
+                  "source": "playerUuid",
+                  "target": "irons_lib:statue_item_data.uuid"
+                },
+                {
+                  "op": "replace",
+                  "source": "pose",
+                  "target": "irons_lib:statue_item_data.pose"
+                },
+                {
+                  "op": "replace",
+                  "source": "flipped",
+                  "target": "irons_lib:statue_item_data.flipped"
+                }
+              ],
+              "source": "block_entity"
+            }
+          ],
+          "name": "irons_lib:player_statue"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

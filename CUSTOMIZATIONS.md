@@ -104,6 +104,16 @@ player is now a `let`: KubeJS's Rhino keeps a `const` declared in a loop body
 at its value from the first pass, so a second streak ending in the same tick
 would have played at the first player.
 
+Iron's Lib 1.0.2 ships the block loot tables of `irons_lib:player_statue`,
+`irons_lib:transmog_table` and `irons_patreon_lib:transmog_table` only under
+1.21's folder name `loot_table`, which 1.20.1 does not read, so these blocks
+dropped nothing when broken. The datapack holds the jar's tables under
+`loot_tables`. The statue's 1.21 `copy_components` becomes 1.20.1's `copy_nbt`
+of the keys its block entity saves, as in the jar's own 1.20.1 table for
+`irons_patreon_lib:player_statue`, so a mined statue keeps its player, pose and
+side. The older `irons_patreon_lib` transmog table drops the `irons_lib` one,
+as the jar's table says.
+
 Branding, server addresses, starter gifts, added mods and version selections,
 launcher packaging, keybindings, graphics settings, other balance/progression
 preferences, selected skill backports and host tuning belong in a separate
