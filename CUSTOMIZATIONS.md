@@ -94,6 +94,16 @@ adding an entity to the world. The script passed its checks with the pack's
 Rhino interpreter and fake entities; confirming it in play needs a death in
 the middle of a bite.
 
+The kill streak's end sound in `kubejs/server_scripts/armor_effects.js` plays
+through `/playsound`, at the player for everyone within 16 blocks, as
+`playSound` would. Iron's RPG Tweaks ships
+`irons_rpg_tweaks:item.identification_scroll.identify` in its assets but
+registers no sound event for it, so `playSound` failed with "No such element
+... in registry minecraft:sound_event" whenever a streak ended. The loop's
+player is now a `let`: KubeJS's Rhino keeps a `const` declared in a loop body
+at its value from the first pass, so a second streak ending in the same tick
+would have played at the first player.
+
 Branding, server addresses, starter gifts, added mods and version selections,
 launcher packaging, keybindings, graphics settings, other balance/progression
 preferences, selected skill backports and host tuning belong in a separate

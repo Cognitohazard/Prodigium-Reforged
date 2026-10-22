@@ -279,14 +279,15 @@ ServerEvents.tick((event) => {
       data.count = 0;
       killStreak[uuid].timer = 0;
 
-      const player = Utils.server.getPlayer(uuid);
+      // let, not const: KubeJS's Rhino keeps a const declared in a loop at its value from the first pass.
+      let player = Utils.server.getPlayer(uuid);
       if (player) {
-        player.playSound(
-          "irons_rpg_tweaks:item.identification_scroll.identify",
-        );
-        player.playSound(
-          "irons_rpg_tweaks:item.identification_scroll.identify",
-        );
+        // Iron's RPG Tweaks ships this sound in its assets but registers no sound event for it, so playSound cannot
+        // find it. /playsound plays a sound by name: here at the player, for everyone within 16 blocks, as playSound
+        // would.
+        let command = `execute at ${player.username} run playsound irons_rpg_tweaks:item.identification_scroll.identify player @a[distance=..16]`;
+        event.server.runCommandSilent(command);
+        event.server.runCommandSilent(command);
       }
     }
   }
