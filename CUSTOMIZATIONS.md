@@ -114,6 +114,12 @@ of the keys its block entity saves, as in the jar's own 1.20.1 table for
 side. The older `irons_patreon_lib` transmog table drops the `irons_lib` one,
 as the jar's table says.
 
+The Underworld Knight's and the Sun Spirit's summon waves
+(`kubejs/server_scripts/bosses_abilities/knight/` and `sun spirit/`) gave each
+summon random coordinates through a `const` in the loop. KubeJS's Rhino keeps
+such a `const` at its first value for the rest of the call, so every mob of a
+wave appeared at the same point. The loops use `let`.
+
 Branding, server addresses, starter gifts, added mods and version selections,
 launcher packaging, keybindings, graphics settings, other balance/progression
 preferences, selected skill backports and host tuning belong in a separate

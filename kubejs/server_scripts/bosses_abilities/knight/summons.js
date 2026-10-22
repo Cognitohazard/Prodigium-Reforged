@@ -24,9 +24,10 @@ EntityEvents.hurt((event) => {
     let dimension = entity.level.dimension.toString();
 
     for (let i = 0; i < 2; i++) {
-      const x = bossRef.x + (Math.random() - 0.5) * 3;
-      const y = bossRef.y;
-      const z = bossRef.z + (Math.random() - 0.5) * 5;
+      // let, not const: KubeJS's Rhino keeps a const declared in a loop at its value from the first pass.
+      let x = bossRef.x + (Math.random() - 0.5) * 3;
+      let y = bossRef.y;
+      let z = bossRef.z + (Math.random() - 0.5) * 5;
       server.runCommandSilent(
         `execute in ${dimension} run summon block_factorys_bosses:poison_area ${x} ${y} ${z}`
       );
