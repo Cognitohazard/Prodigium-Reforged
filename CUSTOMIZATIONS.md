@@ -120,6 +120,17 @@ summon random coordinates through a `const` in the loop. KubeJS's Rhino keeps
 such a `const` at its first value for the rest of the call, so every mob of a
 wave appeared at the same point. The loops use `let`.
 
+Universal Enchants' holders are built while the server scripts load
+(`kubejs/server_scripts/fix_universal_enchants_holders.js`). Universal Enchants
+8.0.0 builds an enchantment's holder the first time `isCompatibleWith` is asked
+about it, in maps that are not thread-safe, and binds the enchantment's category
+to the first holder. Quark's rune smithing recipes ask that while KubeJS parses
+recipes on several worker threads, so a holder could be lost, and its
+enchantment's item list in `config/universalenchants` then had no effect until
+the next start. On a restored server copy five of seven starts lost one to four
+of the vanilla weapon enchantments' lists; with the script, none of four did.
+The script's header and its commit message give the full call chain.
+
 Branding, server addresses, starter gifts, added mods and version selections,
 launcher packaging, keybindings, graphics settings, other balance/progression
 preferences, selected skill backports and host tuning belong in a separate
