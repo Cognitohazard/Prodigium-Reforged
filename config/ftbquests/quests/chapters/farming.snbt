@@ -957,7 +957,7 @@
 			description: [
 				"&9Summer&r is the 2nd season of the year for temperate biomes."
 				""
-				"The grass and foliage mellows out to a yellow-ish green tint. Thunderstorms are also more common in &9summer&r."
+				"The grass and foliage mellows out to a yellow-ish green tint."
 			]
 			hide_dependency_lines: true
 			hide_until_deps_visible: true

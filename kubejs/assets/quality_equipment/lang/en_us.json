@@ -1,0 +1,22 @@
+{
+  "quality_equipment.quality.clumsy_tool": "§cClumsy",
+  "quality_equipment.quality.clumsy_bow": "§cClumsy",
+  "quality_equipment.quality.demonic": "§dDemonic",
+  "quality_equipment.quality.legendary_tool": "§dLegendary",
+  "quality_equipment.quality.legendary_bow": "§dLegendary",
+  "quality_equipment.quality.light_bow": "§9Light",
+  "quality_equipment.quality.powerful_bow": "§bPowerful",
+  "quality_equipment.quality.heavy_armor": "§cHeavy",
+  "quality_equipment.quality.heavy_shield": "§cHeavy",
+  "quality_equipment.quality.lucky_shield": "§bLucky",
+  "quality_equipment.quality.thick_armor": "§eThick",
+  "quality_equipment.quality.thick_shield": "§eThick",
+  "quality_equipment.quality.solid_shield": "§9Solid",
+  "quality_equipment.quality.solid_chestplate": "§9Solid",
+  "quality_equipment.quality.stealthy": "§9Stealthy",
+  "quality_equipment.quality.magician": "§9Magician",
+  "quality_equipment.quality.masterful_helmet": "§dMasterful",
+  "quality_equipment.quality.masterful_chestplate": "§dMasterful",
+  "quality_equipment.quality.masterful_leggings": "§dMasterful",
+  "quality_equipment.quality.masterful_boots": "§dMasterful"
+}

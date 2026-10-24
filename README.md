@@ -30,6 +30,8 @@ attribution apply.
 - Moves Cataclysm's seven structure sets and its Frosted Prison biome tag to the folders the game reads, with
   their spacing unchanged.
 - Updates the Aether biome tag to Aether Redux's current biome ids, and the Eyestalker tag to `#minecraft:is_end`.
+- Lets Respawning Structures rebuild YUNG's Better Ocean Monuments' monument; its list named only the vanilla
+  monument, which that mod replaces.
 
 ### Items, recipes, loot and tags
 
@@ -45,6 +47,10 @@ attribution apply.
 - Marks the Disenchanting blacklist's curses from optional mods as `required: false`, so the tag loads without
   those mods.
 - Supplies the jungle cabin's accessory tag under the file name Terraria Structures reads.
+- Names the 20 Quality Equipment qualities the config adds without a translation (`clumsy_tool`,
+  `masterful_helmet` and others), whose tooltips showed the raw key.
+- Names the boss that really unlocks two item locks: Frostmaw for diamonds, orichalcum and the enchanting
+  table, the Nether Gauntlet for onyx and tungsten.
 - Gives Iron's Lib's player statue and transmog tables 1.20.1 loot tables, so they drop when mined; a statue
   keeps its player, pose and side.
 - **Progression change:** replaces upstream's permanent onyx removals with stage-aware chest loot
@@ -59,6 +65,8 @@ attribution apply.
 - Sends the Farming quest's skill experience to the general tree (`simplyskills:tree`).
 - Asks for one phantom kill in place of an advancement that could not be earned.
 - Fixes one quest dependency in the Mage chapter.
+- Drops the summer Farming quest's claim of more thunderstorms; Serene Seasons' config gives summer the same
+  thunder as spring and autumn.
 - Corrects the Undead Army text (300 undead for the first army, 600 after), explains the Brain of Cthulhu fight,
   and brings the pet quests in line with Tameable Beasts: penguin taming, Argentavis bait and the Frostmaw bag's
   penguin gear.
@@ -79,12 +87,16 @@ attribution apply.
 - Lets the Brain of Cthulhu be hit in phase two (client script `brain_phase_sync.js`), keeping its phase-one
   immunity and decoys.
 - Spreads the Underworld Knight's and Sun Spirit's summon waves, which appeared all at one point.
+- Applies the `Necro T:27` block of `armors.js` to the Sentry set: it changed the Infernal Enforcer set a second
+  time and left Sentry, the third By Powder and Steel set the Gunner chapter asks for, untouched.
 
 ### Errors and scripts
 
 - Ends a dying player's item use, so dying in the middle of a bite no longer kicks the player
   (`death_item_use.js`).
 - Plays the kill streak's end sound by name; the old call failed every time a streak ended.
+- Keeps the NPC system's record of spawned NPCs in the server's saved data, so a restart or reload no longer
+  lets a second NPC of a type spawn (`npc_system.js`).
 - Builds Universal Enchants' enchantment holders before recipes load, so its item lists apply at every start
   (`fix_universal_enchants_holders.js`).
 - Plays spell sounds through the server's player in `spell_listener.js`, which called the client's player.

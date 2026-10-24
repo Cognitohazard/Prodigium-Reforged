@@ -813,14 +813,20 @@ const MISSING_MESSAGES = {
 
 console.info("[NPC System] categoryBlocks loaded - chairs: " + Object.keys(categoryBlocks.chairs).length + ", tables: " + Object.keys(categoryBlocks.tables).length + ", doors: " + Object.keys(categoryBlocks.doors).length + ", light: " + Object.keys(categoryBlocks.light).length);
 
-// tracks which NPC types have been spawned: blockId -> "x,y,z"
-let spawnedNpcs = {};
+// Tracks which NPC types have been spawned, blockId -> "x,y,z", in the server's saved data (KubeJS writes it to
+// kubejs_persistent_data.nbt), so that a restart or reload does not forget them and spawn a second one.
+const NPC_SPAWNED_KEY = "npc_system_spawned";
+
+function spawnedNpcs(server) {
+  return server.persistentData.getCompound(NPC_SPAWNED_KEY);
+}
 
 BlockEvents.placed((event) => {
   let block = event.block;
   if (!(block.id in NPC_COMMANDS)) return;
 
-  if (spawnedNpcs[block.id]) {
+  let spawned = spawnedNpcs(event.level.server);
+  if (spawned.contains(block.id)) {
     console.info("[NPC System] " + block.id + " NPC already spawned, skipping");
     return;
   }
@@ -860,7 +866,8 @@ BlockEvents.placed((event) => {
   console.info("[NPC System] Scan complete - found " + foundCount + "/" + totalRequired + " categories");
 
   if (foundCount === totalRequired) {
-    spawnedNpcs[block.id] = pos.x + "," + pos.y + "," + pos.z;
+    spawned.putString(block.id, pos.x + "," + pos.y + "," + pos.z);
+    event.level.server.persistentData.put(NPC_SPAWNED_KEY, spawned);
     let coords = `${pos.x} ${pos.y} ${pos.z}`;
     let cmd = NPC_COMMANDS[block.id].replace("~ ~ ~", coords);
     console.info("[NPC System] Spawning NPC - command: " + cmd);
@@ -885,9 +892,11 @@ BlockEvents.placed((event) => {
 BlockEvents.broken((event) => {
   let block = event.block;
   let posKey = block.pos.x + "," + block.pos.y + "," + block.pos.z;
-  if (spawnedNpcs[block.id] && spawnedNpcs[block.id] === posKey) {
+  let spawned = spawnedNpcs(event.level.server);
+  if (spawned.contains(block.id) && spawned.getString(block.id) === posKey) {
     console.info("[NPC System] NPC block broken: " + block.id + " at " + posKey + ", allowing re-spawn");
-    delete spawnedNpcs[block.id];
+    spawned.remove(block.id);
+    event.level.server.persistentData.put(NPC_SPAWNED_KEY, spawned);
   }
 });
 

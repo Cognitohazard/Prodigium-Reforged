@@ -584,8 +584,8 @@ ItemEvents.modification((event) => {
     );
   });
 
-  // Necro T:27
-  event.modify("bypowderandsteel:infernal_enforcer_helmet", (item) => {
+  // Sentry T:27
+  event.modify("bypowderandsteel:sentry_helmet", (item) => {
     item.armorProtection = 5;
     item.addAttribute(
       "gunswithoutroses:gwr.fire_delay",
@@ -595,7 +595,7 @@ ItemEvents.modification((event) => {
       "multiply_total"
     );
   });
-  event.modify("bypowderandsteel:infernal_enforcer_chestplate", (item) => {
+  event.modify("bypowderandsteel:sentry_chestplate", (item) => {
     item.armorProtection = 8;
     item.addAttribute(
       "gunswithoutroses:gwr.fire_delay",
@@ -605,7 +605,7 @@ ItemEvents.modification((event) => {
       "multiply_total"
     );
   });
-  event.modify("bypowderandsteel:infernal_enforcer_leggings", (item) => {
+  event.modify("bypowderandsteel:sentry_leggings", (item) => {
     item.armorProtection = 7;
     item.addAttribute(
       "gunswithoutroses:gwr.fire_delay",
@@ -615,7 +615,7 @@ ItemEvents.modification((event) => {
       "multiply_total"
     );
   });
-  event.modify("bypowderandsteel:infernal_enforcer_boots", (item) => {
+  event.modify("bypowderandsteel:sentry_boots", (item) => {
     item.armorProtection = 5;
     item.addAttribute(
       "gunswithoutroses:gwr.fire_delay",
