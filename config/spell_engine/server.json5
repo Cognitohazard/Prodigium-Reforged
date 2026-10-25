@@ -30,7 +30,7 @@
 	// Apply `Spell Casting from Spell Book` capability to any item matching this regex. (Not applied of empty)
 	"add_spell_casting_regex": "",
 	// Do not apply `Spell Casting from Spell Book` capability to any item matching this regex. (Not applied of empty)
-	"blacklist_spell_casting_regex": "",
+	"blacklist_spell_casting_regex": ".*",
 	/* Relations determine which cases the effect of a player casted spell can effect a target.
 	   +----------------+-----------+---------------+----------+----------+--------+
 	   |                | FRIENDLY  | SEMI_FRIENDLY | NEUTRAL  | HOSTILE  | MIXED  |

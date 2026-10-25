@@ -32,6 +32,11 @@ attribution apply.
 - Updates the Aether biome tag to Aether Redux's current biome ids, and the Eyestalker tag to `#minecraft:is_end`.
 - Lets Respawning Structures rebuild YUNG's Better Ocean Monuments' monument; its list named only the vanilla
   monument, which that mod replaces.
+- Supplies Bygone Nether's `no_basalt` structure tag in the folder 1.20.1 reads (the mod ships it under 1.18's
+  `configured_structure_feature`), so basalt columns and lava deltas stop cutting through Bastions and Bygone's
+  manors, citadels and catacombs in newly generated chunks.
+- Replaces Quark's `wraith_spawnable` block tag, which failed to load whole because Bygone Nether adds the
+  missing `quark:soul_stone`; Wraiths prefer soul blocks again.
 
 ### Items, recipes, loot and tags
 
@@ -53,6 +58,11 @@ attribution apply.
   table, the Nether Gauntlet for onyx and tungsten.
 - Gives Iron's Lib's player statue and transmog tables 1.20.1 loot tables, so they drop when mined; a statue
   keeps its player, pose and side.
+- Stops Spell Engine from giving every sword and bow an empty slot for spells "from equipped Spell Book"
+  (`blacklist_spell_casting_regex`): the Spell Binding Table is removed, so no spell book can be made. Weapons
+  with their own spells, such as Barrage on the Orichalcum Bow, keep them.
+- Supplies The Conjurer's `on_theater_maps` structure tag in the folder 1.20.1 reads, so Cartographers offer
+  their Theatre map trade again.
 - **Progression change:** replaces upstream's permanent onyx removals with stage-aware chest loot
   (`kubejs/server_scripts/stage_loot.js`). Items locked by TH Item Stages stay out of chest loot until the player
   opening the chest has the stage.
