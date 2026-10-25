@@ -67,6 +67,8 @@ attribution apply.
 - Fixes one quest dependency in the Mage chapter.
 - Drops the summer Farming quest's claim of more thunderstorms; Serene Seasons' config gives summer the same
   thunder as spring and autumn.
+- Drops the backpack quest's claim that a backpack must be empty to upgrade: the upgrade recipe copies the
+  old backpack's data, so its contents and upgrades stay.
 - Corrects the Undead Army text (300 undead for the first army, 600 after), explains the Brain of Cthulhu fight,
   and brings the pet quests in line with Tameable Beasts: penguin taming, Argentavis bait and the Frostmaw bag's
   penguin gear.

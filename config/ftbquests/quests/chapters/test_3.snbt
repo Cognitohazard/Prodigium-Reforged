@@ -1254,7 +1254,7 @@
 			dependencies: ["509DBFC46966C6EF"]
 			description: [
 				"You can upgrade the size of your backpack."
-				"When you want to upgrade your backpack, it must be empty before using it in a crafting table."
+				"Upgrading it in a crafting table keeps everything inside it, upgrades included."
 			]
 			hide_text_until_complete: false
 			hide_until_deps_visible: true
