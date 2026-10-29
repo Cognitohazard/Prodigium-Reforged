@@ -101,6 +101,8 @@ attribution apply.
 - Spreads the Underworld Knight's and Sun Spirit's summon waves, which appeared all at one point.
 - Applies the `Necro T:27` block of `armors.js` to the Sentry set: it changed the Infernal Enforcer set a second
   time and left Sentry, the third By Powder and Steel set the Gunner chapter asks for, untouched.
+- Applies `armors.js`'s values to the Netherite Battlemage and Dragon Bones armor (`armor_class_values.js`):
+  their item classes build their own modifiers, so the item modifications never reached them.
 
 ### Errors and scripts
 

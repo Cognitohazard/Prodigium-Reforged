@@ -28,6 +28,17 @@ above is unchanged, as are toughness and player damage normalization. This
 applies to living entities, including mobs, not just players. It does not
 give low armor a damage reduction of its own.
 
+Netherite Battlemage armor (Iron's Spells' `ExtendedArmorItem`) and Dragon Bones
+armor (Bosses'Rise's `DragonBonesItem`) build their own attribute modifiers in
+`getDefaultAttributeModifiers`, so the item modifications in `armors.js` never
+reached them. `armor_class_values.js` applies the same values through Forge's
+`ItemAttributeModifierEvent`, which also feeds tooltips: Battlemage chestplate,
+leggings and boots 5, 4 and 2 armor without toughness, and +125 mana and +0.1
+summon damage on the helmet; Dragon Bones chestplate, leggings and boots 12, 11
+and 9 armor, 3, 2 and 2 toughness and +1% damage reduction each. Armor and
+toughness keep the items' own modifier ids. Checked by an item attribute dump on
+a test server.
+
 Pet quest descriptions match Tameable Beasts 7.1.3: penguins use Frozen Fish
 for taming; Argentavis spawns from Y 100 and supports hand-fed bait below
 10 health or bait arrows at any health. The penguin equipment quests now
