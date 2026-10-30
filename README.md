@@ -114,6 +114,8 @@ attribution apply.
 - Builds Universal Enchants' enchantment holders before recipes load, so its item lists apply at every start
   (`fix_universal_enchants_holders.js`).
 - Plays spell sounds through the server's player in `spell_listener.js`, which called the client's player.
+- Lets the Nether, Sol and Prior armor effects in `spell_listener.js` skip a spell with no single target (Heal,
+  Greater Heal, Fortify), which threw an error on every such cast.
 - Stops Achievements Optimizer from skipping item advancement checks (`skipTicksAdvancements = 0`).
 - Turns off Canary's chunk palette mixin, which conflicts with Ore Stages.
 - Sets upstream's four keybinding choices (Signature Ability F, Bestiary H, Skill Tree I, Swap Offhand L) in

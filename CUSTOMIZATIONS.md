@@ -115,6 +115,17 @@ player is now a `let`: KubeJS's Rhino keeps a `const` declared in a loop body
 at its value from the first pass, so a second streak ending in the same tick
 would have played at the first player.
 
+The Nether, Sol and Prior armor effects in `kubejs/server_scripts/spell_listener.js`
+read the target of the spell being cast from Iron's Spells' cast data. Iron's
+Spells 3.4.0.1 stores no cast data for Heal or Greater Heal, and Fortify's cast
+data is an area (`TargetAreaCastData`) that has no `getTarget`. So for a player
+wearing one of these sets the handler threw on each such cast, with `Cannot call
+method "getTarget" of null` or `Cannot find function getTarget`. It now skips a
+cast without a single target. Such a cast gives no armor effect, as before, since
+the handler had always failed there; a cast with a target is handled as before.
+The handler passed its checks with the pack's Rhino interpreter, fake players and
+a Java object standing in for Fortify's cast data.
+
 Iron's Lib 1.0.2 ships the block loot tables of `irons_lib:player_statue`,
 `irons_lib:transmog_table` and `irons_patreon_lib:transmog_table` only under
 1.21's folder name `loot_table`, which 1.20.1 does not read, so these blocks
