@@ -1,7 +1,8 @@
 # Public fixes
 
 This fork's `master` contains reusable Prodigium Reforged correctness and
-compatibility fixes, plus the stage-aware chest-loot replacement described below.
+compatibility fixes, plus the stage-aware chest-loot replacement and the Honey
+Comb bee cut described below.
 The original [upstream repository](https://github.com/AntoineDehan/Prodigium-Reforged)
 is the reference; configure it as the `upstream` Git remote and compare against
 `upstream/master`. The upstream base is `e411450528c12b6314ca14bce795b0a7d5a3f0a1`.
@@ -152,6 +153,62 @@ enchantment's item list in `config/universalenchants` then had no effect until
 the next start. On a restored server copy five of seven starts lost one to four
 of the vanilla weapon enchantments' lists; with the script, none of four did.
 The script's header and its commit message give the full call chain.
+
+The Honey Comb's bees are cut in `kubejs/startup_scripts/fix_honeycomb_bees.js`.
+Terra Curio 0.1.13's `confluence:bee_projectile` hits for a constant set in
+its `onHitEntity`: 5 or 6, or 6 to 8 for a giant bee. The pack's two cuts on
+it, In Control's `damagemultiply 0.1` in `config/incontrol/spawn.json` and
+Attributizer's attack damage -85% in `entity/misc.json`, act on a mob's
+attributes and never reach this projectile, which has none; both are left as
+they are. Each bee hit lands x0.25: the script lowers its amount at Forge's
+highest `LivingHurtEvent` priority. Minecraft's half-second hit window keeps
+the amount a hurt was called with, and a cut in `LivingHurtEvent` changes only
+what lands, so the window would keep the bee's full amount and the next hit
+within it would land only what is above that. In this pack the window keeps
+nothing: Universal Enchants' `no_projectile_immunity`, true in
+`config/universalenchants-server.toml` (and its default), closes it after
+every hit of a `#minecraft:is_projectile` damage type on an entity other than
+a player, and the bee's `mob_projectile` is one. So a bee's hit on a mob
+leaves no window, and clears any open one as it does without the script, and
+the cut is exact. If that setting is turned off or Universal Enchants leaves
+the pack, and when a bee hits a player, the window keeps the bee's full
+amount; a bee's hit inside a window another hit opened lands x0.25 of what is
+above that hit. Code that acts on the hit before `LivingHurtEvent` (the attack
+event, pre-damage hooks, the hurt mob's own `hurt` method, such as a Cataclysm
+boss's damage bucket) sees the bee's uncut hit, once. Cancelling the bee's hit
+and hurting the target again with the lower amount would keep the window small
+without Universal Enchants, but it would run twice everything that acts on a
+hit before the attack event and the hurt mob's own `hurt` method, so the
+script does not do that. Six curios release bees: the Honey Comb, Bee Cloak,
+Stinger Necklace, Sweetheart Necklace, Honey Balloon and Amber Horseshoe
+Balloon, once per hurt above zero however many are worn: 1 to 3 bees, or 1 to
+4 with the Hive Pack, which also makes half of them giant. Every second bee of
+a release is not spawned, so 1, 2, 3 or 4 bees become 1, 1, 2 or 2: x0.6 bees
+with the Hive Pack and x0.15 of the bees' damage in all, the 85% cut the pack
+meant, and x0.17 without it. Terra Curio releases them on every hurt but the
+void and `/kill`, from a fall, fire, drowning, poison or wither too, and on
+the same hurts the Bee Cloak, Star Cloak and Star Veil drop 3 stars
+(`confluence:star_cloak`, a constant 10, not cut). Only a hurt with a living
+attacker other than the wearer now releases either: Terra Curio makes both
+releases inside the hurt's `LivingHurtEvent` at normal priority, after the
+script has noted the hurt, and on the other hurts the script cancels the bees
+and stars as they join the level. A tick of Majrusz's Bleeding names the
+entity that started the bleeding as its attacker, so it releases them, unlike
+poison, fire and falls. The Honey effect each release gives the
+wearer is unchanged. Taking away bees as well as cutting their hits, and the
+attacker rule, are balance choices. Bees and stars loaded from disk, without
+an owner or on the client are left alone, and two releases of one wearer in
+the same game tick count as one. Simply Swords' Hiveheart bee is another
+entity and is unchanged. Setting `HONEYCOMB_ATTACKED_ONLY` to false in the
+script turns the attacker rule off. A change to the script takes effect at a
+restart. It passed its checks with the pack's Rhino interpreter, fake events
+and a model of Forge's hit window with Universal Enchants' reset, and on a
+test server with this pack, a fake player and a fixed-health target:
+each bee-shaped hit of 5 to 8 landed x0.25 and an arrow right after it landed
+in full, while a melee pair kept its window; releases held 1 or 2 bees (mean
+1.53 with the Hive Pack, 1.3 without); fire, falls, poison and the wearer's
+own hit released no bee and no star while a mob's hits did; and twelve real
+bee hits all landed x0.25 (45 of 45 checks, 2026-11-21).
 
 Branding, server addresses, starter gifts, added mods and version selections,
 launcher packaging, keybindings, graphics settings, other balance/progression

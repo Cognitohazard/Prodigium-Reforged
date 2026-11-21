@@ -4,9 +4,9 @@ Prodigium Reforged, with fixes
 This is a fork of [Prodigium Reforged](https://github.com/AntoineDehan/Prodigium-Reforged), a Forge 1.20.1
 modpack inspired by Terraria. Its `master` branch is upstream's `master` at
 [`e411450`](https://github.com/AntoineDehan/Prodigium-Reforged/commit/e411450528c12b6314ca14bce795b0a7d5a3f0a1)
-(2026-09-08) with the changes listed below on top. All but one are fixes; the one change to progression is
-marked. [CUSTOMIZATIONS.md](CUSTOMIZATIONS.md) explains the larger changes, and each commit message gives its
-evidence. To see every changed line:
+(2026-09-08) with the changes listed below on top. All but two are fixes; the one change to progression and
+the one to balance are marked. [CUSTOMIZATIONS.md](CUSTOMIZATIONS.md) explains the larger changes, and each
+commit message gives its evidence. To see every changed line:
 
 ```
 git remote add upstream https://github.com/AntoineDehan/Prodigium-Reforged.git
@@ -103,6 +103,14 @@ attribution apply.
   time and left Sentry, the third By Powder and Steel set the Gunner chapter asks for, untouched.
 - Applies `armors.js`'s values to the Netherite Battlemage and Dragon Bones armor (`armor_class_values.js`):
   their item classes build their own modifiers, so the item modifications never reached them.
+- **Balance change:** cuts the bees of the Honey Comb and the five other Terra Curio items that release them
+  (`fix_honeycomb_bees.js`). Upstream's two cuts on them, In Control's damage multiplier 0.1 and Attributizer's
+  attack damage -85%, never reach the bee, a projectile without attributes whose hit is a constant. Each bee hit
+  now lands x0.25, and every second bee of a release is not spawned (1, 2, 3 or 4 bees become 1, 1, 2 or 2):
+  x0.15 of the bees' damage with the Hive Pack. Only a hurt with a living attacker other than the wearer
+  releases bees, or the stars of the Bee Cloak, Star Cloak and Star Veil: poison, fire, falls, drowning and
+  damage that names no attacker no longer do. A tick of Majrusz's Bleeding names the entity that started it
+  as its attacker, so it still does.
 
 ### Errors and scripts
 
