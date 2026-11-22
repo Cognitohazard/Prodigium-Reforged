@@ -42,13 +42,13 @@
 // `confluence:star_cloak`, class StarCloakEntity, owned by the wearer from its constructor; each hits for a constant
 // 10, damage type `confluence:star_cloak`). Their hits are not cut.
 //
-// Only a hurt with a living attacker other than the wearer releases bees or stars: the damage source's entity is a
-// living entity other than the hurt one (a mob's or another player's hit, an arrow or spell they sent, their
-// explosion). A tick of Majrusz's Bleeding is such a hurt: it names the entity that started the bleeding as its
-// attacker (Progressive Difficulty's BleedingDamage.dealDamage), so it releases bees and stars, unlike Poison, fire
-// and falls. On a hurt without one (poison, wither, fire, a fall, drowning, a boss's damage that names no attacker)
-// or caused by the wearer themselves, the bees and stars that Terra Curio adds are cancelled as they join the level,
-// before the 1, 1, 2, 2 count. Terra Curio's handler runs at NORMAL and makes both releases inside that hurt's
+// Only a mob's hit releases bees or stars: the damage source's entity is a living entity other than the hurt one and
+// not a player (a mob's hit, an arrow or spell it sent, its explosion), and the damage is not a tick of Majrusz's
+// Bleeding. Such a tick names the entity that started the bleeding as its attacker (Progressive Difficulty's
+// BleedingDamage.dealDamage builds it as new DamageSource(bleeding, null, that entity)), so it is told apart by its
+// damage type, majruszsdifficulty:bleeding. On any other hurt (poison, wither, fire, a fall, drowning, a boss's damage
+// that names no attacker, Bleeding, another player's hit, or the wearer's own damage) the bees and stars that Terra
+// Curio adds are cancelled as they join the level, before the 1, 1, 2, 2 count. Terra Curio's handler runs at NORMAL and makes both releases inside that hurt's
 // LivingHurtEvent, after this script's hurt listener (at HIGHEST) has cut a bee's hit and noted the hurt. The note is
 // the last hurt seen: when another hurt happens inside one before Terra Curio's handler (another mod's effect), the
 // release follows that inner hurt, or goes through when the inner hurt was another entity's. HONEYCOMB_ATTACKED_ONLY
@@ -69,14 +69,21 @@ const HONEYCOMB_BEE_TYPE = 'confluence:bee_projectile'
 const HONEYCOMB_STAR_TYPE = 'confluence:star_cloak'
 const HONEYCOMB_BEE_HIT = 0.25
 const HONEYCOMB_ATTACKED_ONLY = true
+const HONEYCOMB_BLEEDING = 'majruszsdifficulty:bleeding'
 // The current game tick and, for it, how many bees each owner's release has added so far.
 let honeycombBeeTick = null
 let honeycombBeeReleased = {}
-// The last hurt seen: its entity's UUID and whether it had a living attacker other than that entity.
+// The last hurt seen: its entity's UUID and whether it was a mob's hit on that entity.
 let honeycombBeeHurt = null
 
 function honeycombBeeIs(entity) {
   return entity !== null && entity !== undefined && String(entity.getType()) === HONEYCOMB_BEE_TYPE
+}
+
+// Whether a damage source is a tick of Majrusz's Bleeding, by its damage type's registry id.
+function honeycombBeeBleeding(source) {
+  let key = source.typeHolder().unwrapKey()
+  return key.isPresent() && String(key.get().location()) === HONEYCOMB_BLEEDING
 }
 
 function honeycombBeeListen(eventClass, name, handle) {
@@ -100,7 +107,8 @@ if (!global.honeycombBeesHooked) {
     if (!HONEYCOMB_ATTACKED_ONLY) return
     let uuid = String(event.getEntity().getUuid())
     let attacker = source.getActual()
-    let attacked = attacker !== null && attacker !== undefined && attacker.isLiving() && String(attacker.getUuid()) !== uuid
+    let attacked = attacker !== null && attacker !== undefined && attacker.isLiving() && !attacker.isPlayer() &&
+      String(attacker.getUuid()) !== uuid && !honeycombBeeBleeding(source)
     honeycombBeeHurt = { uuid: uuid, attacked: attacked }
   })
   honeycombBeeListen('net.minecraftforge.event.entity.EntityJoinLevelEvent', 'release', (event) => {

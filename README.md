@@ -112,10 +112,9 @@ attribution apply.
   (`fix_honeycomb_bees.js`). Upstream's two cuts on them, In Control's damage multiplier 0.1 and Attributizer's
   attack damage -85%, never reach the bee, a projectile without attributes whose hit is a constant. Each bee hit
   now lands x0.25, and every second bee of a release is not spawned (1, 2, 3 or 4 bees become 1, 1, 2 or 2):
-  x0.15 of the bees' damage with the Hive Pack. Only a hurt with a living attacker other than the wearer
-  releases bees, or the stars of the Bee Cloak, Star Cloak and Star Veil: poison, fire, falls, drowning and
-  damage that names no attacker no longer do. A tick of Majrusz's Bleeding names the entity that started it
-  as its attacker, so it still does.
+  x0.15 of the bees' damage with the Hive Pack. Only a mob's hit releases bees, or the stars of the Bee
+  Cloak, Star Cloak and Star Veil: poison, fire, falls, drowning, damage that names no attacker, another
+  player's hit and the ticks of Majrusz's Bleeding (which name the entity that started it) no longer do.
 
 ### Errors and scripts
 

@@ -188,19 +188,20 @@ with the Hive Pack and x0.15 of the bees' damage in all, the 85% cut the pack
 meant, and x0.17 without it. Terra Curio releases them on every hurt but the
 void and `/kill`, from a fall, fire, drowning, poison or wither too, and on
 the same hurts the Bee Cloak, Star Cloak and Star Veil drop 3 stars
-(`confluence:star_cloak`, a constant 10, not cut). Only a hurt with a living
-attacker other than the wearer now releases either: Terra Curio makes both
-releases inside the hurt's `LivingHurtEvent` at normal priority, after the
-script has noted the hurt, and on the other hurts the script cancels the bees
-and stars as they join the level. A tick of Majrusz's Bleeding names the
-entity that started the bleeding as its attacker, so it releases them, unlike
-poison, fire and falls. The Honey effect each release gives the
-wearer is unchanged. Taking away bees as well as cutting their hits, and the
-attacker rule, are balance choices. Bees and stars loaded from disk, without
+(`confluence:star_cloak`, a constant 10, not cut). Only a mob's hit now
+releases either: the attacker must be a living entity other than the wearer
+and not a player, and the damage must not be a tick of Majrusz's Bleeding
+(`majruszsdifficulty:bleeding`), which names the entity that started the
+bleeding as its attacker. Terra Curio makes both releases inside the hurt's
+`LivingHurtEvent` at normal priority, after the script has noted the hurt, and
+on the other hurts the script cancels the bees and stars as they join the
+level. The Honey effect each release gives the wearer is unchanged. Taking
+away bees as well as cutting their hits, and the mob-hit rule, are balance
+choices. Bees and stars loaded from disk, without
 an owner or on the client are left alone, and two releases of one wearer in
 the same game tick count as one. Simply Swords' Hiveheart bee is another
 entity and is unchanged. Setting `HONEYCOMB_ATTACKED_ONLY` to false in the
-script turns the attacker rule off. A change to the script takes effect at a
+script turns the mob-hit rule off. A change to the script takes effect at a
 restart. It passed its checks with the pack's Rhino interpreter, fake events
 and a model of Forge's hit window with Universal Enchants' reset, and on a
 test server with this pack, a fake player and a fixed-health target:
@@ -208,7 +209,11 @@ each bee-shaped hit of 5 to 8 landed x0.25 and an arrow right after it landed
 in full, while a melee pair kept its window; releases held 1 or 2 bees (mean
 1.53 with the Hive Pack, 1.3 without); fire, falls, poison and the wearer's
 own hit released no bee and no star while a mob's hits did; and twelve real
-bee hits all landed x0.25 (45 of 45 checks, 2026-11-21).
+bee hits all landed x0.25 (45 of 45 checks, 2026-11-21). The mob-hit rule,
+which replaced a rule that let any living attacker other than the wearer
+release them, passed its checks with the pack's Rhino interpreter and fake
+events (a Bleeding tick from a mob and from a player, another player's hit
+and arrow); it has not run on a test server yet.
 
 Iron's Spells 3.4.0.1 sets its school resistances only in its listener of
 Forge's FinalizeSpawn event (`ServerPlayerEvents.handleResistanceAttributesOnSpawn`):
