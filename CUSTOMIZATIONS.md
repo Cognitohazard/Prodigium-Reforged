@@ -210,6 +210,24 @@ in full, while a melee pair kept its window; releases held 1 or 2 bees (mean
 own hit released no bee and no star while a mob's hits did; and twelve real
 bee hits all landed x0.25 (45 of 45 checks, 2026-11-21).
 
+Iron's Spells 3.4.0.1 sets its school resistances only in its listener of
+Forge's FinalizeSpawn event (`ServerPlayerEvents.handleResistanceAttributesOnSpawn`):
+an undead mob gets base holy resistance 0.5 and blood 1.5, else a water mob
+lightning 0.5; a fire immune mob fire 1.5; a Blaze ice 0.5. Forge posts that
+event where vanilla sets up a mob (natural spawns, spawners, spawn eggs,
+`/summon`), but not where a mod or vanilla adds a mob another way: the Wither
+built from skulls, bosses raised from an altar, a bait or a corpse, minions and
+converted mobs. Iron's damage factor is 2 minus the resistance, so such an
+undead boss took holy and blood spells at x1.0 where a summoned one takes x1.5
+and x0.5. `kubejs/server_scripts/fix_iron_school_resists.js` applies the same
+tests when a mob joins the world, only to an attribute whose base is still the
+default for its type, and tags the mob `ironSchoolResists`; a mob that had the
+event, or whose value something else set, is left alone, and a saved mob is
+changed the first time it loads. It passed its checks with the pack's Rhino
+interpreter and fake mobs. On a test server a Wither built from skulls had
+holy, blood and fire resistance 1, 1 and 1 without it and 0.5, 1.5 and 1.5
+with it; a Wither Skeleton that had the event kept 0.5 and 1.5 and no tag.
+
 Branding, server addresses, starter gifts, added mods and version selections,
 launcher packaging, keybindings, graphics settings, other balance/progression
 preferences, selected skill backports and host tuning belong in a separate

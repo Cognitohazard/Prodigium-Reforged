@@ -103,6 +103,11 @@ attribution apply.
   time and left Sentry, the third By Powder and Steel set the Gunner chapter asks for, untouched.
 - Applies `armors.js`'s values to the Netherite Battlemage and Dragon Bones armor (`armor_class_values.js`):
   their item classes build their own modifiers, so the item modifications never reached them.
+- Gives mobs Iron's Spells' school resistances on every spawn path (`fix_iron_school_resists.js`). Iron's
+  Spells sets them (undead holy 0.5 and blood 1.5, water lightning 0.5, fire immune fire 1.5, the Blaze ice
+  0.5) only in Forge's FinalizeSpawn event, which the Wither built from skulls, bosses raised from an altar, a
+  bait or a corpse, and minions added straight to the world skip, so such an undead boss took holy and blood
+  spells at x1.0.
 - **Balance change:** cuts the bees of the Honey Comb and the five other Terra Curio items that release them
   (`fix_honeycomb_bees.js`). Upstream's two cuts on them, In Control's damage multiplier 0.1 and Attributizer's
   attack damage -85%, never reach the bee, a projectile without attributes whose hit is a constant. Each bee hit
