@@ -108,6 +108,10 @@ attribution apply.
   0.5) only in Forge's FinalizeSpawn event, which the Wither built from skulls, bosses raised from an altar, a
   bait or a corpse, and minions added straight to the world skip, so such an undead boss took holy and blood
   spells at x1.0.
+- Removes the Nether Gauntlet's +2 `attributeslib:fire_damage` (`attributizer/entity/boss_of_mass.json`).
+  Apothic Attributes deals that fire damage as a hit of its own with the target's hurt immunity cleared, and
+  that small hit then sets what the immunity window subtracts, so each tick of the Gauntlet's punch and laser
+  landed almost in full.
 - **Balance change:** cuts the bees of the Honey Comb and the five other Terra Curio items that release them
   (`fix_honeycomb_bees.js`). Upstream's two cuts on them, In Control's damage multiplier 0.1 and Attributizer's
   attack damage -85%, never reach the bee, a projectile without attributes whose hit is a constant. Each bee hit

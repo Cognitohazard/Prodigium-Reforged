@@ -233,6 +233,18 @@ interpreter and fake mobs. On a test server a Wither built from skulls had
 holy, blood and fire resistance 1, 1 and 1 without it and 0.5, 1.5 and 1.5
 with it; a Wither Skeleton that had the event kept 0.5 and 1.5 and no tag.
 
+The Nether Gauntlet's +2 `attributeslib:fire_damage` in
+`attributizer/entity/boss_of_mass.json` is removed. Apothic Attributes 1.3.7
+(`AttributeEvents.meleeDamageAttributes`, a LivingAttackEvent listener) handles
+a physical hit whose direct attacker is a living entity by saving the target's
+hurt immunity, setting it to 0, dealing the attacker's fire damage as a hit of
+its own and putting the immunity back. That fire hit becomes the target's last
+hurt amount, and while the immunity lasts a later hit lands what it deals above
+the last hurt amount. The Gauntlet's punch and laser hit every tick, so with
+the attribute nearly every tick landed in full. Without it the Gauntlet's hits
+are held by hurt immunity like any other mob's. An attacker that lands hits
+less often than every 10 ticks is not affected this way.
+
 Branding, server addresses, starter gifts, added mods and version selections,
 launcher packaging, keybindings, graphics settings, other balance/progression
 preferences, selected skill backports and host tuning belong in a separate

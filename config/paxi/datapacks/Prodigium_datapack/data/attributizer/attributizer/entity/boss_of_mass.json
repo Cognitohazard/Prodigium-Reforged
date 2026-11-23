@@ -61,11 +61,6 @@
       "operation": "ADDITION"
     },
     {
-      "attribute": "attributeslib:fire_damage",
-      "modify": 2,
-      "operation": "ADDITION"
-    },
-    {
       "attribute": "furattributes:debuff_time",
       "modify": 20,
       "operation": "ADDITION"
